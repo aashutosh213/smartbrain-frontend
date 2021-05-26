@@ -18,7 +18,6 @@ class SignIn extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    console.log("clicked signin")
     fetch("http://localhost:4001/signin", {
       method: "post",
       headers: {

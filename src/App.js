@@ -100,7 +100,6 @@ class App extends Component {
     })
     .then(response => response.json())
       .then((response) => {
-        console.log("picture", response);
         if (response) {
           fetch("http://localhost:4001/images", {
             method: "put",
@@ -116,10 +115,9 @@ class App extends Component {
               this.setState(Object.assign(this.state.user, { entries: count }));
             })
             .catch((err) => {
-              console.log();
+              console.log(err);
             });
         }
-
         this.displayFaceBox(this.calculateFaceLocation(response));
       })
       .catch((err) => console.log(err));
